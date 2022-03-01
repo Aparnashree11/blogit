@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-require('dotenv').config();
+import 'dotenv/config';
 
 
 const Connection = async (username, password) => {
