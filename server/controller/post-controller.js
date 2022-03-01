@@ -6,8 +6,8 @@ export const createPost = async (request, response) => {
     
     try {
         console.log("post create");
-        const post = await new Post(request.body);
-        post.save();
+        const newpost = await new Post(request.body);
+        newpost.save();
 
         response.status(200).json('Post saved successfully');
     } catch (error) {

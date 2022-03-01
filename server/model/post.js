@@ -3,27 +3,24 @@ import mongoose from 'mongoose';
 const PostSchema = mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: false
     },
     description: {
         type: String,
-        required: true
+        required: false
     },
     username: {
         type: String,
-        default: 'Aparna'
     },
     isDraft: {
-        type: Boolean,
-        default: false   
+        type: String,  
     },
     createdDate: {
-        type: Date,
-        default: Date.now()
+        type: String,
     }
 });
 
 
-const post = mongoose.model('post', PostSchema);
+const Post = mongoose.model('Blogs', PostSchema);
 
-export default post;
+export default Post;

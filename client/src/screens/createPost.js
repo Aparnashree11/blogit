@@ -3,14 +3,16 @@ import "../styles/forms.css";
 import React, { useState } from 'react'
 import axios from "axios"
 
+
 function CreatePost(props) {
 
   const [input,setInput] = useState({
-    isDraft:false,
     title:"",
+    desc:"",  
     username:"Aparna",
-    desc:"",
-})
+    isDraft:"false",
+    createdDate: Date.now()
+});
 function handleClick(event)
 {
    event.preventDefault();
@@ -29,19 +31,9 @@ function handleChange(event)
     })
 }
 
-function handleDraft()
-{ 
-    setInput(prevInput => {
-      return{
-        ...prevInput,
-        isDraft: true
-      }
-    })
-}
-
   return (
     <div>
-  <form className="form-style-7" onSubmit={handleClick}>
+  <form className="form-style-7">
     <h5>Create Post</h5>
   <ul>
   <li>
@@ -56,8 +48,8 @@ function handleDraft()
   <span>Enter content</span>
   </li>
   <li>
-  <button type="submit" onClick={handleDraft}>Save It</button>
-  <button type="submit" >Post It</button>
+  <button type="submit" onClick={handleChange} value="true">Save It</button>
+  <button type="submit" onClick={handleClick}>Post It</button>
   </li>
   </ul>
   </form>

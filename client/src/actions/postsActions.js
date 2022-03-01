@@ -67,18 +67,3 @@ export const getDrafts = () => async(dispatch) => {
     }
 };
 
-export const createPost = (postdata, history) => {
-    return dispatch => 
-    {
-    try {
-        axios.post(`${url}/create`, postdata)
-        .then(response => {
-            console.log(response.data);
-            history.push('/');
-        });
-    } catch (error) {
-        console.log(error);
-    }
-    }
-};
-

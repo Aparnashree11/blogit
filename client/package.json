@@ -2,6 +2,15 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "protocol": "https",
+    "host": "127.0.0.1",
+    "port": 8000,
+    "auth": {
+      "username": "mikeymike",
+      "password": "rapunz3l"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
