@@ -75,3 +75,14 @@ export const getDrafts = async (request, response) => {
         response.status(500).json(error)
     }
 }
+
+export const getMyPosts = async (request, response) => {
+    let posts;
+    try{
+        posts = await Post.find({ username: request.params.username });
+        console.log('Hoe', posts)
+        response.status(200).json(posts);
+    } catch (error) {
+        response.status(500).json(error)
+    }
+}

@@ -89,7 +89,7 @@
 	resize:none;
 }
 .form-style-7 input[type="submit"],
-.form-style-7 input[type="button"]{
+.form-style-7 button{
 	background-color:black;
       border-radius:20px;
       border:1px solid rgb(7, 4, 4);
@@ -106,7 +106,7 @@
 	
 }
 .form-style-7 input[type="submit"]:hover,
-.form-style-7 input[type="button"]:hover{
+.form-style-7 button{
 	background: #4c4e50;
 	color:#fff;
 }

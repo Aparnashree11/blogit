@@ -46,5 +46,39 @@ export const getPostDets = (_id) => async(dispatch) => {
     }
 };
 
+export const getDrafts = () => async(dispatch) => {
+    try {
+        dispatch({type: actionTypes.GET_DRAFTS_REQUEST});
 
+        const { data } = await axios.get(`${url}/drafts`);
+        console.log("fetch posts")
+
+        dispatch({
+            type: actionTypes.GET_DRAFTS_SUCCESS,
+            payload: data,
+        })
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_DRAFTS_FAILURE,
+            payload: error.response && error.response.data.message 
+                ? error.response.data.message 
+                : error.message,
+        });
+    }
+};
+
+export const createPost = (postdata, history) => {
+    return dispatch => 
+    {
+    try {
+        axios.post(`${url}/create`, postdata)
+        .then(response => {
+            console.log(response.data);
+            history.push('/');
+        });
+    } catch (error) {
+        console.log(error);
+    }
+    }
+};
 

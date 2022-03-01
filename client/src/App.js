@@ -9,7 +9,6 @@ import Drafts from './screens/drafts';
 import PostScreen from "./screens/postScreen";
 
 import NavBar from './components/navbar';
-import DeletePost from './components/delete';
 
 export class App extends Component {
   render() {
@@ -23,9 +22,8 @@ export class App extends Component {
           <Route path="/" element={<HomeScreen/>}/> 
           <Route path="/create" element={<CreatePost/>}/>
           <Route path="/myposts" element={<MyPosts/> } />
-          <Route path="/mydrafts" element={<Drafts/>} />
+          <Route path="/drafts" element={<Drafts/>} />
           <Route path="/post/:_id" element={<PostScreen/>} />
-          <Route path="/delete/:_id" element={<DeletePost/>} />
         </Routes>
     </div>
     </div>

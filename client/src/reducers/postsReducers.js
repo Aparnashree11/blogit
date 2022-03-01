@@ -42,3 +42,48 @@ export const getPostDetsReducer = (state = {post: {}}, action) => {
             return state
     }
 };
+
+export const getDraftsReducer = (state = {posts: []}, action) => {
+    switch(action.type) {
+        case actionTypes.GET_DRAFTS_REQUEST:
+            return {
+                loading: true,
+                posts: []
+            }
+        case actionTypes.GET_DRAFTS_SUCCESS:
+            return {
+                loading: false,
+                posts: action.payload 
+            }
+        case actionTypes.GET_DRAFTS_FAILURE:
+            return {
+                loading: false,
+                error: action.payload
+            }
+        default:
+            return state
+    }
+};
+
+export const getMyPostsReducer = (state = {posts: []}, action) => {
+    switch(action.type) {
+        case actionTypes.GET_MYPOSTS_REQUEST:
+            return {
+                loading: true,
+                posts: []
+            }
+        case actionTypes.GET_MYPOSTS_SUCCESS:
+            return {
+                loading: false,
+                posts: action.payload 
+            }
+        case actionTypes.GET_MYPOSTS_FAILURE:
+            return {
+                loading: false,
+                error: action.payload
+            }
+        default:
+            return state
+    }
+};
+
