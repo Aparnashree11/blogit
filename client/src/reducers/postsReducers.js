@@ -31,12 +31,12 @@ export const getPostDetsReducer = (state = {post: {}}, action) => {
         case actionTypes.GET_POST_SUCCESS:
             return {
                 loading: false,
-                post: action.payload
+                post: action.payload,
             }
         case actionTypes.GET_POST_FAILURE:
             return {
                 loading: false,
-                error: action.payload
+                error: action.payload,
             }
         default:
             return state
@@ -65,23 +65,13 @@ export const getDraftsReducer = (state = {posts: []}, action) => {
     }
 };
 
-export const getMyPostsReducer = (state = {posts: []}, action) => {
+export const detpostReducer = (state = {post:{}}, action) => {
     switch(action.type) {
-        case actionTypes.GET_MYPOSTS_REQUEST:
-            return {
-                loading: true,
-                posts: []
-            }
-        case actionTypes.GET_MYPOSTS_SUCCESS:
-            return {
-                loading: false,
-                posts: action.payload 
-            }
-        case actionTypes.GET_MYPOSTS_FAILURE:
-            return {
-                loading: false,
-                error: action.payload
-            }
+        case actionTypes.CREATE_POST:
+        return {
+            ...state,
+            loading: false,
+        }
         default:
             return state
     }

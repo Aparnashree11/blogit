@@ -67,3 +67,20 @@ export const getDrafts = () => async(dispatch) => {
     }
 };
 
+const postCreated = () => ({
+    type: actionTypes.CREATE_POST,
+});
+
+export const CreatePost= (blog) => {
+    return function (dispatch) {
+        axios
+        .post(`${url}/create`,blog)
+        .then((res) => {
+            console.log("resp",res);
+            dispatch(postCreated());
+            dispatch(getPosts());
+        })
+        .catch((error) => console.log(error));
+    };
+};
+

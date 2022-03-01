@@ -21,6 +21,6 @@ const PostSchema = mongoose.Schema({
 });
 
 
-const Post = mongoose.model('Blogs', PostSchema);
+const Post = mongoose.model('Blogit', PostSchema);
 
 export default Post;

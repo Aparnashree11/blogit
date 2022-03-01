@@ -1,55 +1,65 @@
 import "../styles/forms.css";
 
-import React, { useState } from 'react'
-import axios from "axios"
+import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {CreatePost} from "../actions/postsActions";
 
 
-function CreatePost(props) {
+function CreateNewPost(props) {
 
-  const [input,setInput] = useState({
-    title:"",
-    desc:"",  
-    username:"Aparna",
-    isDraft:"false",
-    createdDate: Date.now()
-});
-function handleClick(event)
-{
-   event.preventDefault();
-   console.log({input})
-   axios.post('https://localhost:8000/create',input)
+  let dispatch = useDispatch();
 
-}
-function handleChange(event)
-{
-    const{name,value} = event.target;
-    setInput(prevInput => {
-        return{
-            ...prevInput,
-            [name]: value
-        }
-    })
-}
+  const [state, setState] = useState({
+    "title": "",
+    "description": "",
+    "isDraft": "false",
+    "createdDate": Date.now(),
+  });
+
+  const {title, description, isDraft, createdDate} = state;
+
+  const [error, setError] = useState("");
+
+  const handleInputChange= (e) => {
+    let {name, value} = e.target;
+    setState({...state, [name]: value});
+  };
+
+  const handleSubmit=(e) => {
+     e.preventDefault();
+     if(!title || !description) {
+       setError("Input all the fields!");
+     }
+     else {
+        dispatch(CreatePost(state));
+        setError("");
+        console.log(state);
+     }
+
+  };
 
   return (
     <div>
-  <form className="form-style-7">
+  <form className="form-style-7" onSubmit={handleSubmit}>
     <h5>Create Post</h5>
+    { error && <h3>{error}</h3> }
   <ul>
   <li>
   <label>Title</label>
-  <input type="text" name="title"
-           onChange={handleChange}/>
+  <input type="text" value={title} name="title"
+          onChange={handleInputChange} />
   <span>Enter title</span>
   </li>
    <li>
   <label>Description</label>
-  <textarea name="desc" onChange={handleChange}></textarea>
+  <textarea type="text" value={description} name="description"
+          onChange={handleInputChange}> </textarea>
   <span>Enter content</span>
   </li>
   <li>
-  <button type="submit" onClick={handleChange} value="true">Save It</button>
-  <button type="submit" onClick={handleClick}>Post It</button>
+  <button type="submit" value="true" name="isDraft" onClick={handleInputChange}>Save It</button>
+  <button type="submit" > Post It </button>
   </li>
   </ul>
   </form>
@@ -57,4 +67,4 @@ function handleChange(event)
   )
 }
 
-export default CreatePost
+export default CreateNewPost
