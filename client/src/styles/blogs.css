@@ -1,0 +1,97 @@
+h3{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-bottom: 20px;
+  text-align: left;
+}
+p{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+h5{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: left;
+  margin-bottom: 3px;
+}
+
+.blog__page {
+  padding: 100px 100px;
+}
+
+.blog__page__header {
+  letter-spacing: -1px;
+  font-size: 35px;
+  margin-bottom: 10px;;
+}
+
+.blog {
+  text-align: center;
+  min-width: 300px;
+  margin: 10px;
+  height: 100%;
+  text-decoration: none;
+  padding: 20px;
+  background-color: #f9faf9;
+  transition: width 2s;
+}
+
+.blog > div {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 0px 30px;
+}
+
+.blog > img {
+  width: 100%;
+}
+
+.blog > div > h1 {
+  font-size: 25px;
+  letter-spacing: -0.6px;
+  line-height: 1.3em;
+  padding: 10px 0;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.blog > div > p {
+  font-size: 13px;
+  line-height: 1.6em;
+  color: rgb(90, 90, 90);
+  padding-bottom: 30px;
+}
+
+.blog:hover{
+  border-color: black;
+  border-style: solid;
+  transform: scale(1.025);
+}
+
+.myButton {
+	background-color:black;
+	border-radius:2px;
+	border:1px solid rgb(7, 4, 4);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 20px #080f07;
+  font-size: 15px;
+}
+.myButton:hover {
+	background-color:#797a78;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+

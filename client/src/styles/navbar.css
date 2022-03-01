@@ -1,0 +1,63 @@
+
+.Navbar {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Roboto;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 0px 5px silver;
+  }
+  
+  .Toolbar {
+    display: flex;
+    min-height: 56px;
+    align-items: center;
+    padding: 0px 10px;
+  }
+  
+  .Logo {
+    margin-right: 5px;
+    font-size: 30px;
+    vertical-align: middle;
+    line-height: 2;
+  }
+  
+  .Title {
+    flex-grow: 1;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .titleName {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 30px;
+  }
+  
+  .myButton {
+      background-color:black;
+      border-radius:2px;
+      border:1px solid rgb(7, 4, 4);
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:10px;
+      padding:16px 31px;
+      text-decoration:none;
+      text-shadow:0px 1px 20px #080f07;
+  }
+  .myButton:hover {
+      background-color:#797a78;
+  }
+  .myButton:active {
+      position:relative;
+      top:1px;
+  }
+  
+  
