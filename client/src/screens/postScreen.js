@@ -29,15 +29,21 @@ function PostScreen() {
         : error ? 
         <h2>{error}</h2>
         : (
-          <>
+          <div>
             <h1 className='blog__page__header'> {post.title} </h1>
-            <p className="ext">Posted on {post.createdDate} by {post.username}</p>
-            <span className='desc'>{post.description}</span>
-            <button>Update</button>
-            <Link to={`delete/${_id}`} className="myButton">
-              Delete
+            <p>Posted on {post.createdDate} by {post.username}</p>
+            <div>
+            <Link to={``} className="emojis">
+              update
             </Link>
-          </>
+            <Link to={`delete/${_id}`} className="emojis">
+              delete
+            </Link>
+            </div>
+            <hr />
+            <br />
+            <span className='desc'>{post.description}</span>
+          </div>
         ) }
       
 

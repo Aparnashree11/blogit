@@ -4,20 +4,26 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {CreatePost} from "../actions/postsActions";
+import {useNavigate} from "react-router-dom";
 
 
 function CreateNewPost(props) {
 
   let dispatch = useDispatch();
 
+  let history = useNavigate();
+
+  const current= new Date();
+
   const [state, setState] = useState({
     "title": "",
     "description": "",
     "isDraft": "false",
-    "createdDate": Date.now(),
+    "createdDate": current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate(),
+    "username" : "Aparna"
   });
 
-  const {title, description, isDraft, createdDate} = state;
+  const {title, description, isDraft, createdDate, username} = state;
 
   const [error, setError] = useState("");
 
@@ -33,6 +39,7 @@ function CreateNewPost(props) {
      }
      else {
         dispatch(CreatePost(state));
+        history("/");
         setError("");
         console.log(state);
      }
