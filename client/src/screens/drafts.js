@@ -16,6 +16,9 @@ const MyDrafts = () => {
 
   const {posts, loading, error} = getDrafts;
 
+  //import username
+  const user = "saqwed";
+
   useEffect (() => {
     dispatch(ListPosts())
   }, [dispatch]);
@@ -25,17 +28,19 @@ const MyDrafts = () => {
         <h1 className='blog__page__header'>Drafts</h1>
 
         <div>
-          {loading ? <h2>Loading...</h2> 
+        {loading ? <h2>Loading...</h2> 
             : error ? <h2>{error}</h2> 
-            : posts.map(post => (
-            <PostDiv 
+            : posts.map(post => ( 
+            post.username === user ?
+            (<PostDiv 
               key={post._id} 
               _id={post._id}
               title={post.title}
               description={post.description}
               createdDate={post.createdDate}
               username={post.username}
-              />
+              />)
+              : null
           )
           ) 
           }

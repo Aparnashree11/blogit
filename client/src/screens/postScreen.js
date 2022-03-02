@@ -4,16 +4,20 @@ import "../styles/blogs.css";
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {getPostDets} from '../actions/postsActions';
-import { Link, useParams } from 'react-router-dom';
+import {deletePost, getPostDets} from '../actions/postsActions';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function PostScreen() {
 
   const dispatch = useDispatch();
+  const history = useNavigate();
 
   const postDets = useSelector(state => state.getPostDets);
   const {loading, error, post} = postDets;
 
+//import username
+  const user="Saqwed";
+  
   const {_id}= useParams();
 
   useEffect(() =>{
@@ -21,6 +25,13 @@ function PostScreen() {
       dispatch(getPostDets(_id))
     }
   }, [dispatch, post, _id]);
+
+  const handleDelete = (_id) => {
+    if(window.confirm("Do you want to delete the post?")) {
+      dispatch(deletePost(_id));
+      history("/");
+    }
+  }
 
   return (
     <div className='blog__page'>
@@ -32,14 +43,14 @@ function PostScreen() {
           <div>
             <h1 className='blog__page__header'> {post.title} </h1>
             <p>Posted on {post.createdDate} by {post.username}</p>
+            {post.username === user &&
+            (
             <div>
-            <Link to={``} className="emojis">
-              update
-            </Link>
-            <Link to={`delete/${_id}`} className="emojis">
-              delete
-            </Link>
+            <button className="emojis" onClick={() => history(`/update/${post._id}`)}> update </button>
+            <button className='emojis' onClick={() => handleDelete(post._id)}>delete</button>
             </div>
+            )
+            }
             <hr />
             <br />
             <div className='desc'>{post.description}</div>

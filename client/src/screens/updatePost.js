@@ -1,13 +1,13 @@
 import "../styles/forms.css";
 
 import React from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import {CreatePost} from "../actions/postsActions";
-import {useNavigate} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {UpdatePost, getPostDets} from "../actions/postsActions";
+import {useNavigate, useParams} from "react-router-dom";
 
 
-function CreateNewPost(props) {
+function UpdatePosts(props) {
 
   let dispatch = useDispatch();
 
@@ -20,13 +20,27 @@ function CreateNewPost(props) {
     "description": "",
     "isDraft": "false",
     "createdDate": current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate(),
-    //import username
-    "username" : "saqwed"
+    "username" : "Aparna"
   });
 
   const {title, description, isDraft, createdDate, username} = state;
 
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
+
+  const {_id}= useParams();
+
+  const upost = useSelector(state => state.getPostDets);
+  const {loading, error, post} = upost;
+
+  useEffect(() => {
+    dispatch(getPostDets(_id))
+  }, [dispatch, _id]);
+
+  useEffect(() => {
+    if(post) {
+        setState({...post});
+    }
+  },[post]);
 
   const handleInputChange= (e) => {
     let {name, value} = e.target;
@@ -36,12 +50,12 @@ function CreateNewPost(props) {
   const handleSubmit=(e) => {
      e.preventDefault();
      if(!title || !description) {
-       setError("Input all the fields!");
+       setErrors("Input all the fields!");
      }
      else {
-        dispatch(CreatePost(state));
-        history("/");
-        setError("");
+        dispatch(UpdatePost(state, _id));
+        history(`/post/${_id}`);
+        setErrors("");
         console.log(state);
      }
 
@@ -50,24 +64,23 @@ function CreateNewPost(props) {
   return (
     <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
-    <h5>Create Post</h5>
+    <h5>Edit Post</h5>
     { error && <h3>{error}</h3> }
   <ul>
   <li>
   <label>Title</label>
-  <input type="text" value={title} name="title"
+  <input type="text" value={title || ""} name="title"
           onChange={handleInputChange} />
   <span>Enter title</span>
   </li>
    <li>
   <label>Description</label>
-  <textarea type="text" value={description} name="description"
+  <textarea type="text" value={description || ""} name="description"
           onChange={handleInputChange}> </textarea>
   <span>Enter content</span>
   </li>
   <li>
-  <button type="submit" value="true" name="isDraft" onClick={handleInputChange} className="button-23">Save It</button>
-  <button type="submit" className="button-23"> Post It </button>
+  <button type="submit" className="button-23"> Update </button>
   </li>
   </ul>
   </form>
@@ -75,4 +88,4 @@ function CreateNewPost(props) {
   )
 }
 
-export default CreateNewPost
+export default UpdatePosts

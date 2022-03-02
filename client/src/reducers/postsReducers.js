@@ -90,10 +90,16 @@ export const getMyPostsReducer = (state = {posts: []}, action) => {
 export const detpostReducer = (state = {post:{}}, action) => {
     switch(action.type) {
         case actionTypes.CREATE_POST:
+        case actionTypes.UPDATE_POST:
         return {
             ...state,
             loading: false,
         }
+        case actionTypes.DELETE_POST:
+            return {
+                ...state,
+                loading: false,
+            }
         default:
             return state
     }

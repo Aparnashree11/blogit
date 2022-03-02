@@ -7,6 +7,7 @@ import CreateNewPost from './screens/createPost';
 import MyPosts from "./screens/myPosts";
 import Drafts from './screens/drafts';
 import PostScreen from "./screens/postScreen";
+import UpdatePosts from './screens/updatePost';
 
 import NavBar from './components/navbar';
 
@@ -25,6 +26,8 @@ export class App extends Component {
           <Route path="/drafts" element={<Drafts/>} />
           <Route path="/post/:_id" element={<PostScreen/>} />
           <Route path="/drafts/post/:_id" element={<PostScreen/>} />
+          <Route path="/myposts/post/:_id" element={<PostScreen/>} />
+          <Route path="/update/:_id" element={<UpdatePosts/>} />
         </Routes>
     </div>
     </div>

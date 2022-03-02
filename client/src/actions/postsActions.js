@@ -105,3 +105,34 @@ export const CreatePost= (blog) => {
     };
 };
 
+const postUpdated = () => ({
+    type: actionTypes.UPDATE_POST,
+});
+
+export const UpdatePost = (post, _id) => {
+    return function (dispatch) {
+        axios.put(`${url}/update/${_id}`,post)
+        .then((res) => {
+            console.log("resp",res);
+            dispatch(postUpdated());
+            dispatch(getPostDets(_id));
+        })
+        .catch((error) => console.log(error));
+    };
+};
+
+const postDeleted = () => ({
+    type: actionTypes.DELETE_POST,
+});
+
+export const deletePost = (_id) => {
+    return function (dispatch) {
+        axios.delete(`${url}/delete/${_id}`)
+        .then((resp) => {
+            console.log("resp", resp);
+            dispatch(postDeleted());
+            dispatch(getPosts());
+        }).catch((error) => console.log(error));
+    };
+};
+
