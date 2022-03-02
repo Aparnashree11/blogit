@@ -1,6 +1,6 @@
 
 .Navbar {
-    background-color: black;
+    background-color: #000000;
     position: fixed;
     top: 0;
     left: auto;
@@ -40,20 +40,19 @@
   }
   
   .myButton {
-      background-color:black;
-      border-radius:2px;
-      border:1px solid rgb(7, 4, 4);
+      background-color:#000000;
+      border:1px solid #000000;
       display:inline-block;
       cursor:pointer;
       color:#ffffff;
-      font-family:Arial;
-      font-size:10px;
-      padding:16px 31px;
+      font-family:'Trebuchet MS';
+      font-size:12px;
+      padding:22px 31px;
       text-decoration:none;
-      text-shadow:0px 1px 20px #080f07;
+      text-shadow:0px 1px 5px #585858;
   }
   .myButton:hover {
-      background-color:#797a78;
+      background-color:#7f807f;
   }
   .myButton:active {
       position:relative;

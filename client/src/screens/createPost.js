@@ -65,8 +65,8 @@ function CreateNewPost(props) {
   <span>Enter content</span>
   </li>
   <li>
-  <button type="submit" value="true" name="isDraft" onClick={handleInputChange}>Save It</button>
-  <button type="submit" > Post It </button>
+  <button type="submit" value="true" name="isDraft" onClick={handleInputChange} className="button-23">Save It</button>
+  <button type="submit" className="button-23"> Post It </button>
   </li>
   </ul>
   </form>
