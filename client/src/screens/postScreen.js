@@ -42,7 +42,7 @@ function PostScreen() {
             </div>
             <hr />
             <br />
-            <span className='desc'>{post.description}</span>
+            <div className='desc'>{post.description}</div>
           </div>
         ) }
       

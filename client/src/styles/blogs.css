@@ -15,7 +15,13 @@ h5{
   margin-bottom: 3px;
 }
 
+i{
+  color: #898a89;
+}
 
+link{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 .blog__page {
   padding: 100px 100px;
@@ -39,6 +45,10 @@ h5{
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
   border-radius: 25px;
   padding-bottom: 40px;
+}
+
+.desc{
+  white-space: pre-wrap;
 }
 
 .blog > div {

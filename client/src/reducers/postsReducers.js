@@ -65,6 +65,28 @@ export const getDraftsReducer = (state = {posts: []}, action) => {
     }
 };
 
+export const getMyPostsReducer = (state = {posts: []}, action) => {
+    switch(action.type) {
+        case actionTypes.GET_MYPOSTS_REQUEST:
+            return {
+                loading: true,
+                posts: []
+            }
+        case actionTypes.GET_MYPOSTS_SUCCESS:
+            return {
+                loading: false,
+                posts: action.payload 
+            }
+        case actionTypes.GET_MYPOSTS_FAILURE:
+            return {
+                loading: false,
+                error: action.payload
+            }
+        default:
+            return state
+    }
+};
+
 export const detpostReducer = (state = {post:{}}, action) => {
     switch(action.type) {
         case actionTypes.CREATE_POST:

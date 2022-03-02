@@ -67,6 +67,27 @@ export const getDrafts = () => async(dispatch) => {
     }
 };
 
+export const getMyPosts = () => async(dispatch) => {
+    try {
+        dispatch({type: actionTypes.GET_MYPOSTS_REQUEST});
+
+        const { data } = await axios.get(`${url}/myposts`);
+        console.log("fetch posts")
+
+        dispatch({
+            type: actionTypes.GET_MYPOSTS_SUCCESS,
+            payload: data,
+        })
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_MYPOSTS_FAILURE,
+            payload: error.response && error.response.data.message 
+                ? error.response.data.message 
+                : error.message,
+        });
+    }
+};
+
 const postCreated = () => ({
     type: actionTypes.CREATE_POST,
 });

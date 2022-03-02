@@ -24,6 +24,7 @@ export class App extends Component {
           <Route path="/myposts" element={<MyPosts/> } />
           <Route path="/drafts" element={<Drafts/>} />
           <Route path="/post/:_id" element={<PostScreen/>} />
+          <Route path="/drafts/post/:_id" element={<PostScreen/>} />
         </Routes>
     </div>
     </div>
