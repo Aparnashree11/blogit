@@ -16,7 +16,7 @@ function PostScreen() {
   const {loading, error, post} = postDets;
 
 //import username
-  const user="Saqwed";
+  const user="saqwed";
   
   const {_id}= useParams();
 
