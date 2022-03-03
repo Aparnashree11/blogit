@@ -3,7 +3,9 @@
       
       "allowJs": true,
       "target": "es5",
-      "js": "react"
+      "js": "react",
+      "jsx": "preserve",
+      "esModuleInterop":true
     },
     "include": ["./src/**/*"]
   }
