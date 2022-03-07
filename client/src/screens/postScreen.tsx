@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {deletePost, getPostDets} from '../actions/postsActions';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import Navbar from '../components/navbar';
+
 function PostScreen() {
 
   const dispatch = useDispatch();
@@ -29,11 +31,15 @@ function PostScreen() {
   const handleDelete = (_id) => {
     if(window.confirm("Do you want to delete the post?")) {
       dispatch(deletePost(_id));
-      history("/");
+      history("/home");
     }
   }
 
   return (
+    <div>
+      <header>
+        <Navbar />
+        </header>
     <div className='blog__page'>
       {loading ? 
         <h2>Loading...</h2> 
@@ -41,6 +47,7 @@ function PostScreen() {
         <h2>{error}</h2>
         : (
           <div>
+            <a className="back" href="/home"> ← </a>
             <h1 className='blog__page__header'> {post.title} </h1>
             <p>Posted on {post.createdDate} by {post.username}</p>
             {post.username === user &&
@@ -56,7 +63,7 @@ function PostScreen() {
             <div className='desc'>{post.description}</div>
           </div>
         ) }
-      
+      </div>
 
     </div>
   )

@@ -8,6 +8,8 @@ import PostDiv from "../components/postdiv";
 
 import { getDrafts as ListPosts } from '../actions/postsActions';
 
+import Navbar from '../components/navbar';
+
 const MyDrafts = () => {
   
   const dispatch = useDispatch();
@@ -24,6 +26,11 @@ const MyDrafts = () => {
   }, [dispatch]);
 
   return (
+
+    <div>
+      <header>
+        <Navbar />
+        </header>
       <div className='blog__page'>
         <h1 className='blog__page__header'>Drafts</h1>
 
@@ -45,6 +52,7 @@ const MyDrafts = () => {
           ) 
           }
         </div>
+      </div>
       </div>
     );
 }

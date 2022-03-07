@@ -14,6 +14,7 @@
 	font-size:x-large;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 }
+
 .form-style-7 ul{
 	list-style:none;
 	padding:0;
@@ -25,6 +26,7 @@
 	border:1px solid #DDDDDD;
 	margin-bottom: 30px;
 	border-radius: 3px;
+	margin-top: 15px;
 }
 .form-style-7 li:last-child{
 	border:none;
@@ -106,15 +108,6 @@
 	
 }
 
-.ext{
-	color: #4c4e50;
-	font-style: italic;
-}
-
-.desc{
-	font-size: medium;
-}
-
 .button-23 {
 	position: relative;
 	z-index: 3;
@@ -145,6 +138,17 @@
   }
   .button-23:hover {
 	 color: white;
-	background: #898a89;
-	border-color: #717271;
+	background: #030303;
+	border-color: #0c0c0c;
+  }
+
+  .back {
+	  text-decoration: none;
+	  color: #000000;
+	  text-align: right;
+	  font-size: 20px;
+  }
+
+  .back:hover {
+	  background-color: #eeeeee;
   }

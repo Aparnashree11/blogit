@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import {CreatePost} from "../actions/postsActions";
 import {useNavigate} from "react-router-dom";
 
+import Navbar from "../components/navbar";
+
 
 function CreateNewPost(props) {
 
@@ -40,7 +42,7 @@ function CreateNewPost(props) {
      }
      else {
         dispatch(CreatePost(state));
-        history("/");
+        history("/home");
         setError("");
         console.log(state);
      }
@@ -49,7 +51,12 @@ function CreateNewPost(props) {
 
   return (
     <div>
+      <header>
+        <Navbar />
+        </header>
+    <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
+    <a className="back" href="/home"> ← </a>
     <h5>Create Post</h5>
     { error && <h3>{error}</h3> }
   <ul>
@@ -71,6 +78,7 @@ function CreateNewPost(props) {
   </li>
   </ul>
   </form>
+  </div>
   </div>
   )
 }

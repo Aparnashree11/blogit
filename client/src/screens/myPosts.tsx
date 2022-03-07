@@ -8,6 +8,8 @@ import PostDiv from "../components/postdiv";
 
 import { getMyPosts as ListPosts } from '../actions/postsActions';
 
+import Navbar from '../components/navbar';
+
 function MyPosts() {
   
   const dispatch = useDispatch();
@@ -26,6 +28,11 @@ function MyPosts() {
 
   
   return (
+      <div>
+      <header>
+        <Navbar />
+        </header>
+    
     <div className='blog__page'>
       <h1 className='blog__page__header'> My Posts</h1>
 
@@ -47,6 +54,7 @@ function MyPosts() {
           ) 
           }
         </div>
+    </div>
     </div>
   )
 }

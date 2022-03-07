@@ -8,6 +8,8 @@ import PostDiv from "../components/postdiv";
 
 import { getPosts as ListPosts } from '../actions/postsActions';
 
+import Navbar from '../components/navbar';
+
 const HomeScreen = () => {
   
   const dispatch = useDispatch();
@@ -21,9 +23,11 @@ const HomeScreen = () => {
   }, [dispatch]);
 
   return (
+    <div>
+      <header>
+        <Navbar />
+        </header>
       <div className='blog__page'>
-        <h1 className='blog__page__header'>Latest Posts</h1>
-
         <div>
           {loading ? <h2>Loading...</h2> 
             : error ? <h2>{error}</h2> 
@@ -40,6 +44,7 @@ const HomeScreen = () => {
           ) 
           }
         </div>
+      </div>
       </div>
     );
 }

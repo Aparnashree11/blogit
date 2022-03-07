@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {UpdatePost, getPostDets} from "../actions/postsActions";
 import {useNavigate, useParams} from "react-router-dom";
 
+import Navbar from "../components/navbar";
+
 
 function UpdatePosts(props) {
 
@@ -63,6 +65,10 @@ function UpdatePosts(props) {
 
   return (
     <div>
+      <header>
+        <Navbar />
+        </header>
+    <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
     <h5>Edit Post</h5>
     { error && <h3>{error}</h3> }
@@ -84,6 +90,7 @@ function UpdatePosts(props) {
   </li>
   </ul>
   </form>
+  </div>
   </div>
   )
 }

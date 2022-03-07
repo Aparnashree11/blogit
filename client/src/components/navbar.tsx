@@ -15,7 +15,7 @@ const Navbar = () => {
                         {" "}
                     </div>
                     <div className="Title"> 
-                        <a className="titleName" href="/"> BlOG it! </a>  
+                        <a className="titleName" href="/home"> BlOG it! </a>  
                     </div>
                     <div>
                         <a className="myButton" href="/create">Create Post</a>
