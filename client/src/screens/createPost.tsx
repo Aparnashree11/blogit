@@ -56,7 +56,7 @@ function CreateNewPost(props) {
         </header>
     <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
-    <a className="back" href="/home"> ← </a>
+    <a className="back" href="/home"> ← back </a>
     <h5>Create Post</h5>
     { error && <h3>{error}</h3> }
   <ul>

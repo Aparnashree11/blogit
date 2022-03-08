@@ -70,6 +70,7 @@ function UpdatePosts(props) {
         </header>
     <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
+    <a className="back" href="/home"> ← home </a>
     <h5>Edit Post</h5>
     { error && <h3>{error}</h3> }
   <ul>

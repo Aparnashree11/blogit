@@ -57,7 +57,7 @@ export const getAllPosts = async (request: any, response: any) => {
     let posts;
     try {
         posts = await Post.find({ isDraft: false });
-        console.log('Hoe', posts)
+        console.log('All posts', posts)
         response.status(200).json(posts);
     } catch (error) {
         response.status(500).json(error)
@@ -68,7 +68,7 @@ export const getDrafts = async (request: any, response:any) => {
     let posts;
     try{
         posts = await Post.find({ isDraft: true });
-        console.log('Hoe', posts)
+        console.log('Drafts', posts)
         response.status(200).json(posts);
     } catch (error) {
         response.status(500).json(error)
@@ -79,7 +79,7 @@ export const getMyPosts = async (request: any, response: any) => {
     let posts;
     try{
         posts = await Post.find({});
-        console.log('Hoe', posts)
+        console.log('My posts', posts)
         response.status(200).json(posts);
     } catch (error) {
         response.status(500).json(error)

@@ -47,7 +47,7 @@ function PostScreen() {
         <h2>{error}</h2>
         : (
           <div>
-            <a className="back" href="/home"> ← </a>
+            <a className="back" href="/home"> ← back </a>
             <h1 className='blog__page__header'> {post.title} </h1>
             <p>Posted on {post.createdDate} by {post.username}</p>
             {post.username === user &&
