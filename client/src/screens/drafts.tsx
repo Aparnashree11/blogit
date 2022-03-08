@@ -19,7 +19,7 @@ const MyDrafts = () => {
   const {posts, loading, error} = getDrafts;
 
   //import username
-  const user = "saqwed";
+  const user = "aparna";
 
   useEffect (() => {
     dispatch(ListPosts())

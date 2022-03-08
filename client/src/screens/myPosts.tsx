@@ -19,7 +19,7 @@ function MyPosts() {
   const {posts, loading, error} = getMyPosts;
 
   //import username
-  const user="saqwed";
+  const user="aparna";
 
   useEffect (() => {
     dispatch(ListPosts())
