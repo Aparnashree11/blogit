@@ -39,7 +39,7 @@ function MyPosts() {
       <div>
           {loading ? <h2>Loading...</h2> 
             : error ? <h2>{error}</h2> 
-            : posts.map(post => ( 
+            : posts.reverse().map(post => ( 
             post.username === user ?
             (<PostDiv 
               key={post._id} 
