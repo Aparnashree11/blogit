@@ -78,7 +78,7 @@ export const getDrafts = async (request: any, response:any) => {
 export const getMyPosts = async (request: any, response: any) => {
     let posts;
     try{
-        posts = await Post.find({});
+        posts = await Post.find({isDraft: false});
         console.log('My posts', posts)
         response.status(200).json(posts);
     } catch (error) {
