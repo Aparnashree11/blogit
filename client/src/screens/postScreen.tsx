@@ -48,7 +48,7 @@ function PostScreen() {
         : (
           <div>
             <a className="back" href="/home"> ← back </a>
-            <h1 className='blog__page__header'> {post.title} </h1>
+            <h3 className='blog__page__header'> {post.title} </h3>
             <p>Posted on {post.createdDate} by {post.username}</p>
             {post.username === user &&
             (
@@ -59,6 +59,8 @@ function PostScreen() {
             )
             }
             <hr />
+            <br />
+            <img className='blogimage' src={post.imageURL} alt="BlogImage" />
             <br />
             <div className='desc'>{post.description}</div>
           </div>

@@ -23,10 +23,11 @@ function CreateNewPost(props) {
     "isDraft": "false",
     "createdDate": current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate(),
     //import username
-    "username" : "saqwed"
+    "username" : "aparna",
+    "imageURL": "",
   });
 
-  const {title, description, isDraft, createdDate, username} = state;
+  const {title, description, isDraft, createdDate, username, imageURL} = state;
 
   const [error, setError] = useState("");
 
@@ -37,7 +38,7 @@ function CreateNewPost(props) {
 
   const handleSubmit=(e) => {
      e.preventDefault();
-     if(!title || !description) {
+     if(!title || !description || !imageURL) {
        setError("Input all the fields!");
      }
      else {
@@ -65,6 +66,12 @@ function CreateNewPost(props) {
   <input type="text" value={title} name="title"
           onChange={handleInputChange} />
   <span>Enter title</span>
+  </li>
+  <li>
+  <label>Image URL</label>
+  <input type="text" value={imageURL} name="imageURL"
+          onChange={handleInputChange} />
+  <span>Enter image URL</span>
   </li>
    <li>
   <label>Description</label>

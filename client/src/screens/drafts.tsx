@@ -46,6 +46,7 @@ const MyDrafts = () => {
               description={post.description}
               createdDate={post.createdDate}
               username={post.username}
+              imageURL={post.imageURL}
               />)
               : null
           )

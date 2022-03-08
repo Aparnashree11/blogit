@@ -17,10 +17,13 @@ const PostSchema = new mongoose.Schema({
     },
     createdDate: {
         type: String,
-    }
+    },
+    imageURL: {
+        type: String,
+    },
 });
 
 
-const Post = mongoose.model('Blogit', PostSchema);
+const Post = mongoose.model('Blogposts', PostSchema);
 
 export default Post;

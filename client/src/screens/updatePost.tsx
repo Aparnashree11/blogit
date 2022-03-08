@@ -22,10 +22,11 @@ function UpdatePosts(props) {
     "description": "",
     "isDraft": "false",
     "createdDate": current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate(),
-    "username" : "Aparna"
+    "username" : "Aparna",
+    "imageURL" : "",
   });
 
-  const {title, description, isDraft, createdDate, username} = state;
+  const {title, description, isDraft, createdDate, username, imageURL} = state;
 
   const [errors, setErrors] = useState("");
 
@@ -79,6 +80,12 @@ function UpdatePosts(props) {
   <input type="text" value={title || ""} name="title"
           onChange={handleInputChange} />
   <span>Enter title</span>
+  </li>
+  <li>
+  <label>Image URL</label>
+  <input type="text" value={imageURL || ""} name="imageURL"
+          onChange={handleInputChange} />
+  <span>Enter image URL</span>
   </li>
    <li>
   <label>Description</label>

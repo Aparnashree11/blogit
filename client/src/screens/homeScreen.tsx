@@ -28,6 +28,7 @@ const HomeScreen = () => {
         <Navbar />
         </header>
       <div className='blog__page'>
+        <h1 className='blog__page__header'>Welcome!</h1>
         <div>
           {loading ? <h2>Loading...</h2> 
             : error ? <h2>{error}</h2> 
@@ -39,6 +40,7 @@ const HomeScreen = () => {
               description={post.description}
               createdDate={post.createdDate}
               username={post.username}
+              imageURL={post.imageURL}
               />
           )
           ) 

@@ -1,4 +1,5 @@
 h3{
+  margin: 10px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-bottom: 5px;
   text-align: left;
@@ -7,6 +8,7 @@ p{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 12px;
   padding-bottom: 10px;
+  margin-left: 10px;
 }
 
 h5{
@@ -16,11 +18,19 @@ h5{
 }
 
 i{
+  margin: 10px;
   color: #898a89;
 }
 
 link{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .blog__page {
@@ -35,27 +45,29 @@ link{
 
 .blog {
   text-align: center;
-  margin: 20px;
-  size: auto;
   text-decoration: none;
-  padding: 10px;
   transition: width 2s;
   margin: 40px;
   box-shadow: 4px 3px 8px 1px #969696;
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
   border-radius: 25px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  size: auto;
+  margin-bottom: 60px;
 }
 
 .desc{
   white-space: pre-wrap;
+  font-family: sans-serif;
+  line-height: 1.5;
+  
 }
 
 .blog > div {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   display: flex;
   flex-direction: column;
-  padding: 0px 30px 0px 30px;
+  
 }
 
 .blog > div > h1 {
@@ -140,6 +152,17 @@ link{
 
 .back:hover {
   background-color: #eeeeee;
+}
+
+.blogimage {
+  padding: 5px;
+  height: 300px;
+  width: 90%;
+  border-radius: 0px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
