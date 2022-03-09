@@ -10,7 +10,7 @@ import { getDrafts as ListPosts } from '../actions/postsActions';
 
 import Navbar from '../components/navbar';
 
-const MyDrafts = () => {
+const MyDrafts = ({user}) => {
   
   const dispatch = useDispatch();
 
@@ -19,25 +19,20 @@ const MyDrafts = () => {
   const {posts, loading, error} = getDrafts;
 
   //import username
-  const user = "aparna";
+  // const user = "aparna";
 
   useEffect (() => {
     dispatch(ListPosts())
   }, [dispatch]);
 
   return (
-
-    <div>
-      <header>
-        <Navbar />
-        </header>
       <div className='blog__page'>
         <h1 className='blog__page__header'>Drafts</h1>
 
         <div>
         {loading ? <h2>Loading...</h2> 
             : error ? <h2>{error}</h2> 
-            : posts.reverse().map(post => ( 
+            : posts.map(post => ( 
             post.username === user ?
             (<PostDiv 
               key={post._id} 
@@ -53,7 +48,6 @@ const MyDrafts = () => {
           ) 
           }
         </div>
-      </div>
       </div>
     );
 }

@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 import Navbar from "../components/navbar";
 
 
-function CreateNewPost(props) {
+function CreateNewPost({user}) {
 
   let dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ function CreateNewPost(props) {
     "isDraft": "false",
     "createdDate": current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate(),
     //import username
-    "username" : "aparna",
+    "username" : user,
     "imageURL": "",
   });
 
@@ -51,10 +51,6 @@ function CreateNewPost(props) {
   };
 
   return (
-    <div>
-      <header>
-        <Navbar />
-        </header>
     <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
     <a className="back" href="/home"> ← back </a>
@@ -85,7 +81,6 @@ function CreateNewPost(props) {
   </li>
   </ul>
   </form>
-  </div>
   </div>
   )
 }

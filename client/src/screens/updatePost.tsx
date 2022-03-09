@@ -6,10 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {UpdatePost, getPostDets} from "../actions/postsActions";
 import {useNavigate, useParams} from "react-router-dom";
 
-import Navbar from "../components/navbar";
 
-
-function UpdatePosts(props) {
+function UpdatePosts({user}) {
 
   let dispatch = useDispatch();
 
@@ -22,7 +20,7 @@ function UpdatePosts(props) {
     "description": "",
     "isDraft": "false",
     "createdDate": current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate(),
-    "username" : "Aparna",
+    "username" : user,
     "imageURL" : "",
   });
 
@@ -66,10 +64,6 @@ function UpdatePosts(props) {
 
   return (
     <div>
-      <header>
-        <Navbar />
-        </header>
-    <div>
   <form className="form-style-7" onSubmit={handleSubmit}>
     <a className="back" href="/home"> ← home </a>
     <h5>Edit Post</h5>
@@ -98,7 +92,6 @@ function UpdatePosts(props) {
   </li>
   </ul>
   </form>
-  </div>
   </div>
   )
 }

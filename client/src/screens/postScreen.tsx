@@ -7,9 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {deletePost, getPostDets} from '../actions/postsActions';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import Navbar from '../components/navbar';
-
-function PostScreen() {
+function PostScreen({user}) {
 
   const dispatch = useDispatch();
   const history = useNavigate();
@@ -17,8 +15,8 @@ function PostScreen() {
   const postDets = useSelector(state => state.getPostDets);
   const {loading, error, post} = postDets;
 
-//import username
-  const user="saqwed";
+ //import username
+//   const user="saqwed";
   
   const {_id}= useParams();
 
@@ -36,10 +34,7 @@ function PostScreen() {
   }
 
   return (
-    <div>
-      <header>
-        <Navbar />
-        </header>
+
     <div className='blog__page'>
       {loading ? 
         <h2>Loading...</h2> 
@@ -66,8 +61,6 @@ function PostScreen() {
           </div>
         ) }
       </div>
-
-    </div>
   )
 }
 
