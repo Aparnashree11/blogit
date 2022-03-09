@@ -38,7 +38,7 @@
 	float: left;
 	margin-top: -19px;
 	background: #FFFFFF;
-	height: 14px;
+	height: 24px;
 	padding: 2px 5px 2px 5px;
 	color: #B9B9B9;
 	font-size: 14px;
@@ -58,7 +58,7 @@
 	height: 25px;
 	line-height: 25px;
 	font-size: 16px;
-	padding: 0;
+	padding: 5px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 

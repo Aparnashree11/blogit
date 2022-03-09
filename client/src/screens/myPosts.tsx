@@ -8,7 +8,6 @@ import PostDiv from "../components/postdiv";
 
 import { getMyPosts as ListPosts } from '../actions/postsActions';
 
-import Navbar from '../components/navbar';
 
 function MyPosts({user}) {
   
@@ -17,9 +16,6 @@ function MyPosts({user}) {
   const getMyPosts = useSelector(state => state.getMyPosts);
 
   const {posts, loading, error} = getMyPosts;
-
-  //import username
-  // const user="aparna";
 
   useEffect (() => {
     dispatch(ListPosts())

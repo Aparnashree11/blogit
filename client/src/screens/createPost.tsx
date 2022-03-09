@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import {CreatePost} from "../actions/postsActions";
 import {useNavigate} from "react-router-dom";
 
-import Navbar from "../components/navbar";
 
 
 function CreateNewPost({user}) {
@@ -43,9 +42,10 @@ function CreateNewPost({user}) {
      }
      else {
         dispatch(CreatePost(state));
-        history("/home");
         setError("");
         console.log(state);
+        history("/");
+        
      }
 
   };

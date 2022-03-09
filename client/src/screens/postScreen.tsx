@@ -14,9 +14,6 @@ function PostScreen({user}) {
 
   const postDets = useSelector(state => state.getPostDets);
   const {loading, error, post} = postDets;
-
- //import username
-//   const user="saqwed";
   
   const {_id}= useParams();
 
@@ -29,7 +26,7 @@ function PostScreen({user}) {
   const handleDelete = (_id) => {
     if(window.confirm("Do you want to delete the post?")) {
       dispatch(deletePost(_id));
-      history("/home");
+      history("/");
     }
   }
 

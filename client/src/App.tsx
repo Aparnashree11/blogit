@@ -33,7 +33,7 @@ function App({signOut, user}) {
                         {" "}
                     </div>
                     <div className="Title"> 
-                        <a className="titleName" href="/home"> BlOG it! </a>  
+                        <a className="titleName" href="/"> BlOG it! </a>  
                     </div>
                     <div>
                         <a className="myButton" href="/create">Create Post</a>
@@ -52,11 +52,11 @@ function App({signOut, user}) {
         </div>
     <div>
         <Routes>
-          <Route path="/home" element={<HomeScreen/>}/> 
+          <Route path="/" element={<HomeScreen/>}/> 
           <Route path="/create" element={<CreateNewPost user={user.attributes.name}/>}/>
           <Route path="/myposts" element={<MyPosts user={user.attributes.name}/> } />
           <Route path="/drafts" element={<Drafts user={user.attributes.name}/>} />
-          <Route path="/home/post/:_id" element={<PostScreen user={user.attributes.name}/>} />
+          <Route path="/post/:_id" element={<PostScreen user={user.attributes.name}/>} />
           <Route path="/drafts/post/:_id" element={<PostScreen user={user.attributes.name}/>} />
           <Route path="/myposts/post/:_id" element={<PostScreen user={user.attributes.name}/>} />
           <Route path="/update/:_id" element={<UpdatePosts user={user.attributes.name}/>} />
